@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cadastro Usuário Único Fatec Ipi Noite Firebase</string>
+    <string name="action_settings">Settings</string>
+    <string name="nome_label">Nome:</string>
+    <string name="fone_label">Fone:</string>
+    <string name="email_label">Email:</string>
+    <string name="title_activity_editar_usuario">EditarUsuarioActivity</string>
+    <string name="dica_nome">Digite seu nome</string>
+    <string name="dica_fone">Digite seu fone</string>
+    <string name="dica_email">Digite seu email</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "647806661094",
+    "firebase_url": "https://cadastrousuariounicofatecipino.firebaseio.com",
+    "project_id": "cadastrousuariounicofatecipino",
+    "storage_bucket": "cadastrousuariounicofatecipino.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647806661094:android:6fdcd7950e1a55a2",
+        "android_client_info": {
+          "package_name": "br.com.bossini.cadastrousurionicofatecipinoitefirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647806661094-eemrlr9v6207jvrsl72doifnpuu01apu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.bossini.cadastrousurionicofatecipinoitefirebase",
+            "certificate_hash": "131f01e241308e568f2975de37cc5ffca26684c6"
+          }
+        },
+        {
+          "client_id": "647806661094-063aignv9mu1r1ggmcub65skn5k1jgjr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCREvMgFp6zMTMIcUELx3pvO-Tkl7XsK28"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647806661094-063aignv9mu1r1ggmcub65skn5k1jgjr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
