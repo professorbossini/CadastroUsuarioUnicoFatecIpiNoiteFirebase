@@ -8,4 +8,6 @@
     <string name="dica_nome">Digite seu nome</string>
     <string name="dica_fone">Digite seu fone</string>
     <string name="dica_email">Digite seu email</string>
+    <string name="ok_subiu">Ok, subiu</string>
+    <string name="ok_baixou">Ok, baixou</string>
 </resources>

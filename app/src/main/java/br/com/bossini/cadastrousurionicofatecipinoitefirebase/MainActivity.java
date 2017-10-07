@@ -1,6 +1,7 @@
 package br.com.bossini.cadastrousurionicofatecipinoitefirebase;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -10,18 +11,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView nomeTextView, foneTextView, emailTextView;
     private ImageView exibeFotoImageView;
     private FirebaseDatabase database;
+    private StorageReference storageRootReference;
     DatabaseReference referenceUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         });
         database = FirebaseDatabase.getInstance();
         referenceUsuario = database.getReference("usuario");
+        storageRootReference = FirebaseStorage.getInstance().getReference();
+        baixarFoto();
         referenceUsuario.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -58,6 +70,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void baixarFoto(){
+        try{
+            StorageReference fotoReference = storageRootReference.child("img/foto.png");
+            final File temp = File.createTempFile("img", "foto.png");
+            fotoReference.getFile(temp).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Usuario.getInstance().setFoto(BitmapFactory.decodeFile(temp.getPath()));
+                    Toast.makeText(MainActivity.this, getString (R.string.ok_baixou), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override
